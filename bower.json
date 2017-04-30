@@ -6,7 +6,7 @@
     "Ryan Gonzalez <rymg19@gmail.com>"
   ],
   "description": "fast, beautiful, and painless social shares.",
-  "main": "build/share.min.js",
+  "main": "dist/share-button.js",
   "moduleType": [
     "globals"
   ],
