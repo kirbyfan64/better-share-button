@@ -36,6 +36,7 @@ class ShareButton extends ShareUtils {
       title: this._defaultTitle(),
       image: this._defaultImage(),
       description: this._defaultDescription(),
+      root: document,
 
       ui: {
         flyout: 'sb-top sb-center',
@@ -136,7 +137,7 @@ class ShareButton extends ShareUtils {
 
     if (typeof element === 'undefined')
       instances =
-        super._objToArray(document.getElementsByTagName('share-button'));
+        super._objToArray(this.config.root.getElementsByTagName('share-button'));
     else
       instances = document.querySelectorAll(element);
 
@@ -160,9 +161,9 @@ class ShareButton extends ShareUtils {
 
     if (typeof element === 'undefined')
       instances =
-        super._objToArray(document.getElementsByTagName('share-button'));
+        super._objToArray(this.config.root.getElementsByTagName('share-button'));
     else {
-      instances = document.querySelectorAll(`share-button${element}`);
+      instances = this.config.root.querySelectorAll(`share-button${element}`);
       if (typeof instances === 'object')
         instances = super._objToArray(instances);
     }
