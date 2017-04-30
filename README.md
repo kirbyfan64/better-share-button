@@ -9,7 +9,7 @@
   </a>
 </p>
 
-#Notes
+# Notes
 
 This is a fork of
 [the original Carrot share-button](https://github.com/carrot/share-button).
