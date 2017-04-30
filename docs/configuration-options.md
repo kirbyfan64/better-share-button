@@ -7,7 +7,7 @@ Passing configuration options:
 config = {
     networks: {
         facebook: {
-            app_id: '12345'
+            appId: '12345'
         }
     }
 }
@@ -27,7 +27,7 @@ config = {
   ui: {
     flyout:       // change the flyout direction of the shares. chose from `top left`, `top center`, `top right`, `bottom left`, `bottom right`, `bottom center`, `middle left`, or `middle right` [Default: `top center`]
     button_font:  // include the Lato font set from the Google Fonts API. [Default: `true`]
-    button_text:  // change the text of the button, [Default: `Share`]
+    buttonText:  // change the text of the button, [Default: `Share`]
     icon_font:    // include the minified Entypo font set. [Default: `true`]
   },
   networks: {
@@ -46,7 +46,7 @@ config = {
                     // NOTE: This will disable the ability to dynamically set values and rely directly on applicable Open Graph tags.
                     // [Default: true]
       url:          // the url you'd like to share to Facebook [Default: config.url]
-      app_id:       // Facebook app id for tracking shares. if provided, will use the facebook API
+      appId:       // Facebook app id for tracking shares. if provided, will use the facebook API
       title:        // title to be shared alongside your link to Facebook [Default: config.title]
       caption:      // caption to be shared alongside your link to Facebook [Default: null]
       description:  // text to be shared alongside your link to Facebook [Default: config.description]

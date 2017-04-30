@@ -2,6 +2,7 @@ require('core-js/fn/symbol');
 require('core-js/fn/array/iterator');
 require('core-js/fn/math/trunc');
 import ShareUtils from './share-utils';
+import StringUtils from './string-utils';
 
 /**
  * Sharebutton
@@ -35,6 +36,7 @@ class ShareButton extends ShareUtils {
       title: this._defaultTitle(),
       image: this._defaultImage(),
       description: this._defaultDescription(),
+      root: document,
 
       ui: {
         flyout: 'sb-top sb-center',
@@ -42,7 +44,6 @@ class ShareButton extends ShareUtils {
         namespace: 'sb-',
         networkOrder: [],
         collision: false,
-        updateShareButtonSize: true
       },
 
       networks: {
@@ -136,7 +137,7 @@ class ShareButton extends ShareUtils {
 
     if (typeof element === 'undefined')
       instances =
-        super._objToArray(document.getElementsByTagName('share-button'));
+        super._objToArray(this.config.root.getElementsByTagName('share-button'));
     else
       instances = document.querySelectorAll(element);
 
@@ -160,9 +161,9 @@ class ShareButton extends ShareUtils {
 
     if (typeof element === 'undefined')
       instances =
-        super._objToArray(document.getElementsByTagName('share-button'));
+        super._objToArray(this.config.root.getElementsByTagName('share-button'));
     else {
-      instances = document.querySelectorAll(`share-button${element}`);
+      instances = this.config.root.querySelectorAll(`share-button${element}`);
       if (typeof instances === 'object')
         instances = super._objToArray(instances);
     }
@@ -215,7 +216,7 @@ class ShareButton extends ShareUtils {
    * @description Sets up each instance with config and styles
    * @private
    *
-   * @param {DOMNode} element
+   * @param {DOMNode} instance
    * @param {Integer} index
    */
   _setupInstance(instance, index) {
@@ -246,14 +247,14 @@ class ShareButton extends ShareUtils {
 
         this._addClass(network, this.config.networks[name].class);
 
-        if (network.className !== 'email')
+        if (network.className.indexOf('email') < 0)
           a.setAttribute('onclick', 'return false');
 
         a.addEventListener('mousedown', () => {
           this._hook('before', name, instance);
         });
         a.addEventListener('mouseup', () => {
-          this[`_network${name.capFLetter()}`](network);
+          this[`_network${StringUtils.capFLetter(name)}`](network);
         });
         a.addEventListener('click', () => {
           this._hook('after', name, instance);
@@ -390,7 +391,7 @@ class ShareButton extends ShareUtils {
    *
    * @private
    * @param {DOMNode} button
-   * @param {DOMNode} label
+   * @param {DOMNode} networks
    * @param {Object} dimensions
    */
   _adjustClasses(button, networks, dimensions) {
@@ -492,11 +493,12 @@ class ShareButton extends ShareUtils {
    */
   _networkFacebook(element) {
     if (this.config.networks.facebook.loadSdk) {
-      if (!window.FB)
-        return console.error('The Facebook JS SDK hasn\'t loaded yet.');
-      this._updateHref(element, 'https://www.facebook.com/sharer/sharer.php', {
-        u: this.config.networks.facebook.url
-      });
+      if (!window.FB) {
+        console.error('The Facebook JS SDK hasn\'t loaded yet.');
+        return this._updateHref(element, 'https://www.facebook.com/sharer/sharer.php', {
+          u: this.config.networks.facebook.url
+        });
+      }
       return FB.ui({
         method:'feed',
         name: this.config.networks.facebook.title,
@@ -505,13 +507,14 @@ class ShareButton extends ShareUtils {
         caption: this.config.networks.facebook.caption,
         description: this.config.networks.facebook.description
       });
-    } else
+    } else {
       return this._updateHref(
         element,
         'https://www.facebook.com/sharer/sharer.php', {
           u: this.config.networks.facebook.url
         }
       );
+    }
   }
 
   /**

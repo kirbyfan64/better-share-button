@@ -9,6 +9,12 @@
   </a>
 </p>
 
+#Notes
+
+This is a fork of
+[the original Carrot share-button](https://github.com/carrot/share-button).
+Because, after a year of being unmaintained, *it still looks freaking awesome*.
+
 # An Introduction
 Simple, light, flexible, and good-looking share button. [See it in action!](http://sharebutton.co/)
 
@@ -43,7 +49,31 @@ Let's take a quick look at the alternative, using this little plugin:
 new ShareButton({
   networks: {
     facebook: {
-      app_id: "abc123"
+      appId: "abc123"
+    }
+  }
+});
+```
+
+## NPM installation
+
+1. `npm i --save-dev share-button`
+2. Make a `share-button` element on your page
+3. In your javascript, `var ShareButton = require('share-button');`
+4. Pass options to the share call if you want (details below)
+5. Profit!
+
+```html
+<share-button></share-button>
+```
+
+```js
+var ShareButton = require('share-button');
+
+new ShareButton({
+  networks: {
+    facebook: {
+      appId: "abc123"
     }
   }
 });
