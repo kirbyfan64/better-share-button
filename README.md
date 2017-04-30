@@ -9,6 +9,12 @@
   </a>
 </p>
 
+#Notes
+
+This is a fork of
+[the original Carrot share-button](https://github.com/carrot/share-button).
+Because, after a year of being unmaintained, *it still looks freaking awesome*.
+
 # An Introduction
 Simple, light, flexible, and good-looking share button. [See it in action!](http://sharebutton.co/)
 
