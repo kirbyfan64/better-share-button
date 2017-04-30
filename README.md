@@ -9,7 +9,7 @@
   </a>
 </p>
 
-#Notes
+# Notes
 
 This is a fork of
 [the original Carrot share-button](https://github.com/carrot/share-button).
@@ -35,7 +35,8 @@ Let's take a quick look at the alternative, using this little plugin:
 4. It's tiny and compact, expanding only when the user actually wants to share something.
 
 # Getting Started
-1. [Download the latest script & stylesheet](https://github.com/carrot/share-button/releases) and include it on your page.
+
+1. Run `bower install better-share-button#master` (because I can't figure out npm yet).
 2. Make a `share-button` element on your page
 3. In your javascript, call `new ShareButton()`
 4. Pass options to the share call if you want (details below)
@@ -56,6 +57,8 @@ new ShareButton({
 ```
 
 ## NPM installation
+
+**NOTE:** This is for the original *share-button*, not this fork!
 
 1. `npm i --save-dev share-button`
 2. Make a `share-button` element on your page
