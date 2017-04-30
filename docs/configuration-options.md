@@ -22,7 +22,8 @@ config = {
   protocol:     // the protocol you'd prefer to use. [Default: your current protocol]
   url:          // the url you'd like to share. [Default: `window.location.href`]
   title:        // title to be shared alongside your link [Default: See below in defaults section]
-  description:  // text to be shared alongside your link, [Default: See below in defaults section]   
+  description:  // text to be shared alongside your link, [Default: See below in defaults section]
+  root:         // the root element to perform DOM queries on; can be used to support usage inside web components or shadow DOM [Default: `document`]
   image:        // image to be shared [Default: See below in defaults section]
   ui: {
     flyout:       // change the flyout direction of the shares. chose from `top left`, `top center`, `top right`, `bottom left`, `bottom right`, `bottom center`, `middle left`, or `middle right` [Default: `top center`]
@@ -42,7 +43,7 @@ config = {
     },
     facebook: {
       enabled:      // Enable Facebook. [Default: true]
-      load_sdk:     // Load the FB SDK. If false, it will default to Facebook's sharer.php implementation. 
+      load_sdk:     // Load the FB SDK. If false, it will default to Facebook's sharer.php implementation.
                     // NOTE: This will disable the ability to dynamically set values and rely directly on applicable Open Graph tags.
                     // [Default: true]
       url:          // the url you'd like to share to Facebook [Default: config.url]
@@ -90,11 +91,11 @@ The follow logic is used to populate default values for some of the config keys 
   - meta tag name='twitter:title' content attribute value
   - document's title tag value
 
-- _image_ - the first defined, non-null value out of (in order): 
+- _image_ - the first defined, non-null value out of (in order):
   - meta tag name='og:image' content attribute value
   - meta tag name='twitter:image' content attribute value
 
-- _description_ - the first defined, non-null value out of (in order): 
+- _description_ - the first defined, non-null value out of (in order):
   - meta tag name='og:description' content attribute value
   - meta tag name='twitter:description' content attribute value
   - meta tag name='description' content attribute value
