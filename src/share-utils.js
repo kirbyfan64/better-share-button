@@ -239,7 +239,7 @@ class ShareUtils {
 
         if (typeof sourceProperty === 'object' &&
             // Avoid an infinite loop if a DOM element is hit.
-            !(sourceProperty instanceof Element)) {
+            !(sourceProperty instanceof Node)) {
           target[property] = this._merge(target[property], sourceProperty);
           continue;
         }
