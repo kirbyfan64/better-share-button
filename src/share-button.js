@@ -157,6 +157,9 @@ class ShareButton extends ShareUtils {
    * @param {Object} opts
    */
   _setup(element, opts) {
+    // Adding user configs to default configs
+    this._merge(this.config, opts);
+
     let instances;
 
     if (typeof element === 'undefined')
@@ -167,9 +170,6 @@ class ShareButton extends ShareUtils {
       if (typeof instances === 'object')
         instances = super._objToArray(instances);
     }
-
-    // Adding user configs to default configs
-    this._merge(this.config, opts);
 
     // Disable whatsapp display if not a mobile device
     if (this.config.networks.whatsapp.enabled && !this._isMobile())
