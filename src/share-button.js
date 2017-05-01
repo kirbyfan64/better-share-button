@@ -137,7 +137,7 @@ class ShareButton extends ShareUtils {
 
     if (typeof element === 'undefined')
       instances =
-        super._objToArray(this.config.root.getElementsByTagName('share-button'));
+        super._objToArray(this.config.root.querySelectorAll('share-button'));
     else
       instances = document.querySelectorAll(element);
 
@@ -161,7 +161,7 @@ class ShareButton extends ShareUtils {
 
     if (typeof element === 'undefined')
       instances =
-        super._objToArray(this.config.root.getElementsByTagName('share-button'));
+        super._objToArray(this.config.root.querySelectorAll('share-button'));
     else {
       instances = this.config.root.querySelectorAll(`share-button${element}`);
       if (typeof instances === 'object')
