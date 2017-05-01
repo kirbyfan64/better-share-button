@@ -109,6 +109,7 @@ share-button .sb-social.sb-right.active.sb-bottom {
 }
 share-button .sb-social.active {
   opacity: 1;
+  -webkit-backface-visibility: hidden;
   transition: all 0.4s ease;
   visibility: visible;
 }
