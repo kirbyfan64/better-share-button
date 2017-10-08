@@ -1,6 +1,7 @@
 {
   "name": "better-share-button",
-  "homepage": "http://refi64.com/better-share-button",
+  "version": "0.1",
+  "homepage": "https://refi64.com/better-share-button",
   "authors": [
     "Jeff Escalante <hello@jenius.me>",
     "Ryan Gonzalez <rymg19@gmail.com>"

@@ -1,30 +1,22 @@
 {
-  "name": "share-button",
-  "description": "fast, beautiful, and painless social shares",
-  "version": "1.0.3",
-  "homepage": "http://sharebutton.co",
+  "name": "better-share-button",
+  "description": "fast, beautiful, and painless social shares (a fork of the original share-button)",
+  "version": "0.1.0",
+  "homepage": "https://refi64.com/better-share-button",
   "main": "dist/share-button.js",
   "bugs": {
-    "url": "https://github.com/carrot/share-button/issues"
+    "url": "https://github.com/kirbyfan64/better-share-button/issues"
   },
   "author": "Jeff Escalante <hello@jenius.me>",
   "contributors": [
-    {
-      "name": "Tom Milewski",
-      "email": "tmilewski@gmail.com"
-    },
-    {
-      "name": "Henry Snopek",
-      "email": "hhsnopek@gmail.com"
-    },
-    {
-      "name": "Patrick Bacon-Blaber",
-      "email": "pablaber225@gmail.com"
-    }
+    "Ryan Gonzalez <rymg19@gmail.com>",
+    "Tom Milewski <tmilewski@gmail.com>",
+    "Henry Snopek <hhsnopek@gmail.com>",
+    "Patrick Bacon-Blaber <pablaber225@gmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/carrot/share-button"
+    "url": "https://github.com/kirbyfan64/better-share-button"
   },
   "license": "MIT",
   "dependencies": {
